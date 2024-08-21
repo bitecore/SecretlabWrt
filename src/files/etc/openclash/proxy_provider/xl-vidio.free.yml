@@ -1,0 +1,146 @@
+proxies:
+  # VMESS
+  - name: Free ID (vmess-ssh-ocean)
+    server: nontontv.vidio.com
+    port: 443
+    type: vmess
+    uuid: e9043dca-0ec7-45c2-90d3-db24fd5df150
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id1.v2vmess.site
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id1.v2vmess.site
+    udp: true
+    idle-timeout: 600
+
+  - name: Free ID 2 (vmess-ssh-ocean)
+    server: nontontv.vidio.com
+    port: 443
+    type: vmess
+    uuid: 1a6ff1db-af9c-4581-85c9-2216078d450b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id2.v2vmess.site
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id2.v2vmess.site
+    udp: true
+    idle-timeout: 600
+
+  - name: Free ID 3 (vmess-ssh-ocean)
+    server: nontontv.vidio.com
+    port: 443
+    type: vmess
+    uuid: 7feda0ef-f4ff-4d85-971b-c3b9bbd47648
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id3.v2vmess.site
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id3.v2vmess.site
+    udp: true
+    idle-timeout: 600
+
+  # VLESS
+  - name: Free ID (vless-ssh-ocean)
+    server: nontontv.vidio.com
+    port: 443
+    type: vless
+    uuid: d42bb0d2-bc7a-4de9-b73a-f7c7c0de0403
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id1.v2vless.site
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: id1.v2vless.site
+    udp: true
+    idle-timeout: 600
+
+  - name: Free ID 2 (vless-ssh-ocean)
+    server: nontontv.vidio.com
+    port: 443
+    type: vless
+    uuid: 84e10188-fbfd-4d43-9a79-a91b07db7a6f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id2.v2vless.site
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: id2.v2vless.site
+    udp: true
+    idle-timeout: 600
+
+  - name: Free ID 3 (vless-ssh-ocean)
+    server: nontontv.vidio.com
+    port: 443
+    type: vless
+    uuid: c5949195-05ec-4368-996e-aca9ffea1737
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id3.v2vless.site
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: id3.v2vless.site
+    udp: true
+    idle-timeout: 600
+
+  - name: Free AT (vless-ssh-ocean)
+    server: nontontv.vidio.com
+    port: 443
+    type: vless
+    uuid: e7680b7e-58bf-4917-99e8-217ada901ceb
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: at1.v2vless.site
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: at1.v2vless.site
+    udp: true
+    idle-timeout: 600
+
+  # - name: Free EU
+  #   server: quiz.staging.vidio.com
+  #   port: 443
+  #   type: vmess
+  #   uuid: a2037940-5468-11ef-b730-205c6d5f5d78
+  #   alterId: 0
+  #   cipher: auto
+  #   tls: true
+  #   skip-cert-verify: true
+  #   servername: eu-2.hihu.net
+  #   network: ws
+  #   ws-opts:
+  #     path: /92nsril3
+  #     headers:
+  #       Host: eu-2.hihu.net
+  #   udp: true
+  #   idle-timeout: 600

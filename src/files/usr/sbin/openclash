@@ -1,0 +1,50 @@
+#!/bin/bash
+
+cleanup_log() {
+    clear
+    echo "==================================================================" > /var/openclash.log
+    echo "==================================================================" > /tmp/openclash.log
+}
+
+
+print_clean() {
+    local msg="$1"
+    # tput cuu1 && tput el
+    [[ "$msg" != "" ]] && echo -e "$msg"
+}
+
+airplane() {
+    local deviceConnected="$(adb devices | grep "device" | grep -v "List of devices attached")"
+    [ "$deviceConnected" == "" ] && exit
+
+    echo -e "\033[33mTurn on airplane mode\033[0m"
+    
+    adb shell cmd connectivity airplane-mode enable
+    print_clean "\033[33mAirplane mode on\033[0m"
+    print_clean "\033[33mWaiting 10 second for refresh ip address\033[0m"
+    sleep 10
+    print_clean "\033[33mTurn of airplane mode\033[0m"
+    adb shell cmd connectivity airplane-mode disable
+    print_clean "\033[33mAirplane mode off\033[0m"
+}
+
+clash() {
+    local command="$1"
+    if [[ "$command" == "exit" ]]; then
+        service openclash stop
+    elif [[ "$command" == "start" ]]; then
+        airplane &
+        service openclash reload
+        service openclash start 1> /dev/null &
+    elif [[ "$command" == "restart" ]]; then
+        service openclash stop
+	airplane &
+	service openclash reload
+        service openclash restart 1> /dev/null &
+    fi
+
+
+}
+
+[ $1 ] && clash "$1"
+cleanup_log && tail -Fv -n 1000 /tmp/openclash.log

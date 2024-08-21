@@ -1,0 +1,32 @@
+proxies:
+  - name: Premium SG
+    type: vmess
+    server: nontontv.vidio.com
+    port: 443
+    uuid: c7b0cd0c-ab20-4960-95fc-497a23330486
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    skip-cert-verify: true
+    servername: sg3.digienz.my.id
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg3.digienz.my.id
+    idle-timeout: 300
+
+  - name: SSH Ws SG
+    type: http
+    server: sg3.digienz.my.id
+    port: 443
+    username: yuyu
+    password: 123
+    tls: false
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: quiz.staging.vidio.com

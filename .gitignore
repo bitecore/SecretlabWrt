@@ -1,0 +1,7 @@
+/OpenWrt
+/.tmp
+/.config
+/.config.conf
+/build
+/config.conf
+/src/model/*

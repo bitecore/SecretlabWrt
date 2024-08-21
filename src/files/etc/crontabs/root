@@ -1,0 +1,2 @@
+*/35 * * * * sh /sbin/cleanup > /dev/null
+0 3 * * * /usr/share/openclash/openclash_ipdb.sh

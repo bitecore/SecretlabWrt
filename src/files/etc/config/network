@@ -1,0 +1,67 @@
+
+config interface 'loopback'
+	option device 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fdd3:fee9:d979::/48'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	option ipv6 '0'
+	list ports 'eth0'
+	list ports 'usb0'
+	list ports 'usb1'
+
+config interface 'lan'
+	option device 'eth0'
+	option proto 'static'
+	option ipaddr '192.168.0.1'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+	option broadcast '192.168.0.2'
+	option ip4table 'local'
+	option ip6table 'local'
+	list ip6class 'local'
+
+config device
+	option type 'bridge'
+	option name 'modem'
+	option ipv6 '0'
+	list ports 'usb0'
+
+config device
+	option name 'eth0'
+	option ipv6 '1'
+
+config device
+	option name 'eth1'
+	option promisc '1'
+
+
+config device
+	option name 'usb0'
+	option ipv6 '1'
+
+config device
+	option name 'usb1'
+	option ipv6 '1'
+	option promisc '1'
+
+
+config interface 'wan'
+	option proto 'dhcp'
+	option device 'usb0'
+	option force_link '1'
+	option ip4table 'local'
+	option ip6table 'local'
+
+
+config interface 'wan2'
+	option proto 'dhcp'
+	option device 'usb1'
+	option ip4table 'local'
+	option ip6table 'local'
